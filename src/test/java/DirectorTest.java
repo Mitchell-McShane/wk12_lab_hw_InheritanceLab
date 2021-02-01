@@ -37,4 +37,21 @@ public class DirectorTest {
     public void hasBudget(){
         assertEquals(2000.00, director.getBudget(),0.1);
     }
+
+    @Test
+    public void preventNegativeValue(){
+        director.raiseSalary(-2500.00);
+        assertEquals(150000.00, director.getSalary(),0.1);
+    }
+
+    @Test
+    public void updateNameIfNotNull(){
+        director.setName(null);
+        assertEquals("Fury", director.getName());
+    }
+
+    @Test
+    public void hasPayBonus(){
+        assertEquals(3000.00, director.payBonus(),0.02);
+    }
 }
